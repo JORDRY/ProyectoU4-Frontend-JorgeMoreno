@@ -62,22 +62,22 @@
             <i id="close" class=" boton-menu fas fa-x"></i>
         </div>
         <div class="modal">
-            <div class="modal-info">
-                <h1>Want to receive the hottest news?</h1>
-                <p>Subscribe us to keep up-to-date!</p>
-                <div class="caja-form">
-                    <input type="email" id="email" name="email" placeholder="Your Email">
-                </div> <br>
-                <div class="btn-info">
-                    <a href="#" class="btn-appo">SUSCRIBE</a>
-                </div>
+            <div class="forms">
+                <form action="enviar_mailer.php" method="post" name="cont_form">
+                    <h1>Contact Us</h1>
+                    <input class="caract" type="text" required name="nombre" placeholder="Name*" id="nombre"><br>
+                    <input class="caract" type="email" required name="email" placeholder="Email*" id="email"><br>
+                    <input class="caract" type="tel" required name="celular" placeholder="9999 99 99 99*" id="celular"><br>
+                    <textarea class="caract" name="comentarios" required id="comentarios" placeholder="Sent a comment"></textarea><br><br>
+                    <div class="btnForm">
+                      <button type="submit" id="boton">Enviar </button>
+                    </div>
+                  </form>
+          
             </div>
-            <figure class="fotomodal">
-                <img src="imagenes/modal.png" alt="">
-            </figure>
         </div>
     </article>
-    <section class="cajapadre-info ancho">
+    <section id="home" class="cajapadre-info ancho">
         <div class="caja-logo">
             <figure>
                 <img src="imagenes/logo.jpg" alt="">
@@ -117,9 +117,9 @@
         </div>
         <nav id="menu" class="ancho">
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li id="btn-submenu"><a href="#">SERVICES <i aria-hidden="true" class="fa fa-angle-down"></i></a>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#About">ABOUT</a></li>
+                <li id="btn-submenu"><a href="#About">SERVICES <i aria-hidden="true" class="fa fa-angle-down"></i></a>
                   <ul id="submenu" class="submenu">
                       <li><a href="#">Local Moving</a></li>
                       <li><a href="#">Long Distance</a></li>
@@ -142,7 +142,7 @@
                     </ul></li>
                 <li><a href="#">PRICES</a></li>
                 <li><a href="#">BLOG</a></li>
-                <li><a href="#">CONTACTS</a></li>
+                <li><a href="#About">CONTACTS</a></li>
               </ul>
               <div class="icono-lupa">
                 <i class="fa-solid fa-magnifying-glass lupa"></i>
@@ -313,8 +313,8 @@
                 </p>
             </div>
             <div class="video wow animate__animated animate__bounceIn">
-                <div class="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bifytk8DUfk?si=VLc8mwYmtvy_7JiB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="video2">
+                    <iframe width="560" height="315"  src="https://www.youtube.com/embed/bifytk8DUfk?si=VLc8mwYmtvy_7JiB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
             </div>
         </div>
@@ -323,7 +323,7 @@
 
     <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #00AEEF;"></path></svg></div>
 
-    <section class="section7 ancho">
+    <section id="About" class="section7 ancho">
         <section class="cont-acordeon wow animate__animated animate__bounceIn">
             <article class="accordion-section">
                 <h1>Our comunity</h1>
@@ -362,11 +362,22 @@
                         </div>
                     </div>
                 </div>
+                <br><br><br>
+                <div id="open" class="btn-appo">
+                    <p>Contact Us</p>
+                </div>
             </article>
         </section>
         <article class="cont-galeria wow animate__animated animate__bounceIn">
             <h1>PROJECTS</h1>
-            <article class="galeria">
+            <div class="galeriaphotos">
+                <ul class="tabs">
+                    <li><a href="#tab1">ALL</a></li>
+                    <li><a href="#tab2">NEW</a></li>
+                    <li><a href="#tab3">BESTSELLER</a></li>
+                </ul>
+            </div>
+            <article id="tab1" class="contenedores galeria">
                 <a data-fancybox="gallery" data-src="imagenes/g1.jpg" data-caption="" >
                     <figure class="ancla-filtro">
                         <img src="imagenes/g1.jpg" alt="">
@@ -440,25 +451,67 @@
                     </figure>
                 </a>
             </article>
+
+            <article id="tab2" class="contenedores galeria">
+                <a data-fancybox="gallery" data-src="imagenes/g1.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g1.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+                <a data-fancybox="gallery" data-src="imagenes/g2.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g2.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+                <a data-fancybox="gallery" data-src="imagenes/g3.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g3.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+                <a data-fancybox="gallery" data-src="imagenes/g4.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g4.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+            </article>
+
+            <article id="tab3" class="contenedores galeria">
+                <a data-fancybox="gallery" data-src="imagenes/g3.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g3.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+                <a data-fancybox="gallery" data-src="imagenes/g4.jpg" data-caption="" >
+                    <figure class="ancla-filtro">
+                        <img src="imagenes/g4.jpg" alt="">
+                        <div class="filtro">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </figure>
+                </a>
+            </article>
         </article>
     </section>
             <!-- Generated by https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections -->
 
             <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #00AEEF;"></path></svg></div>
     <section class="section8 ancho">
-        <div class="forms">
-            <form action="enviar_mailer.php" method="post" name="cont_form">
-                <h1>Contact Us</h1>
-                <input class="caract" type="text" required name="nombre" placeholder="Name*" id="nombre"><br>
-                <input class="caract" type="email" required name="email" placeholder="Email*" id="email"><br>
-                <input class="caract" type="tel" required name="celular" placeholder="9999 99 99 99*" id="celular"><br>
-                <textarea class="caract" name="comentarios" required id="comentarios" placeholder="Sent a comment"></textarea><br><br>
-                <div class="btnForm">
-                  <button type="submit" id="boton">Enviar </button>
-                </div>
-              </form>
-      
-        </div>
+
     </section>
     <div class="btn_subir">
         <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
@@ -476,7 +529,6 @@
     </footer>
     <!-- GALERIA -->
     <script>
-        new WOW().init();
         Fancybox.bind('[data-fancybox="gallery"]',{});
     </script>
     
@@ -535,6 +587,26 @@
         //     fondo.style.display="flex";
         // }
         // setTimeout(tiempo,1000);
+    </script>
+    <!-- TABS -->
+    <script>
+        $(".contenedores").hide();
+        $("ul.tabs li:first").addClass("active").show();
+        $(".contenedores:first").show();
+
+        //eventos click botones
+        $("ul.tabs li").click(function () {
+          $("ul.tabs li").removeClass("active");
+          $(this).addClass("active");
+          $(".contenedores").hide();
+
+          var activeTab = $(this).find("a").attr("href");
+          $(activeTab).fadeIn();
+          return false;
+        });
+      </script>
+    <script>
+            new WOW().init();
     </script>
 </body>
 </html>
